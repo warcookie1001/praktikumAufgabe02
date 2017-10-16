@@ -80,7 +80,7 @@ namespace praktikumAufgabe02
             if (diskriminante < 0)          //D<0: Nur komplexe Lösungen, keine weitere Berechnung
             {
                 Console.WriteLine("Die Gleichung enthält nur Lösungen im komplexen Bereich");
-                Console.WriteLine("Es kann keine Lösung berechnet werden");
+                Console.WriteLine("Es kann keine reelle Lösung berechnet werden");
             }
             else if (diskriminante == 0)    //D==0: eine Nullstelle
             {
