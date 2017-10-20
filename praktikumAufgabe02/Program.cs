@@ -18,24 +18,18 @@ namespace praktikumAufgabe02
     {
         static void Main(string[] args)
         {
-            String aStr, bStr, cStr;
             int a, b, c;
 
             Console.WriteLine("Bitte Werte in der Form ax^2 + bx + c = 0  eingeben");
             Console.WriteLine();
-            Console.Write("a=");    //Einlesen der Werte als String
-            aStr = Console.ReadLine();
+            Console.Write("a=");    
+            a = ReadInt();          //Einlesen der Werte durch EIGENE Funktion (siehe weiter unten)
             Console.Write("\r\nb=");
-            bStr = Console.ReadLine();
+            b = ReadInt();
             Console.Write("\r\nc=");
-            cStr = Console.ReadLine();
+            c = ReadInt();
             Console.WriteLine("\r\n\r\n");    //zwei Leerzeilen zur besseren Lesbarkeit
 
-
-
-            a = Convert.ToInt32(aStr);  //casten der eingelesenen Werte zu int
-            b = Convert.ToInt32(bStr);
-            c = Convert.ToInt32(cStr);
 
             if (a == 0 & b == 0)        //Fall 1: Keine Lösung möglich
             {
@@ -52,14 +46,25 @@ namespace praktikumAufgabe02
             }
 
 
-
             Console.ReadLine();
         }
 
 
 
+        static int ReadInt()    //Liest einen Zeile auf der Konsole ein und gibt den Wert
+        {                       //zu int konvertiert aus
+            String inputLine;
+            int outputInt;
 
-        static void BerechneLineareGleichung(int b, int c) {
+            inputLine = Console.ReadLine();
+            outputInt = Convert.ToInt32(inputLine);
+
+            return outputInt;
+        }
+
+
+        static void BerechneLineareGleichung(int b, int c)          //Funktion zur Berechnung einer linearen Gleichung
+        {
             double nullstelle;
 
             nullstelle = (double) - c / b;    //Lösung einer linearen Gleichung
@@ -70,8 +75,7 @@ namespace praktikumAufgabe02
 
 
 
-
-        static void BerechneQuadratischeGleichung(int a, int b, int c)  //Funktion zur Berechnung der quadratischen Gleichung
+        static void BerechneQuadratischeGleichung(int a, int b, int c)  //Funktion zur Berechnung einer quadratischen Gleichung
         {
             double nullstelle1, nullstelle2, diskriminante;
 
